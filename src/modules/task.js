@@ -8,13 +8,28 @@ export default class Task {
         this.completed = false;
     }
 
-    getCompleted() {
-        return this.completed;
+    toggle() {
+        this.completed = !this.completed;
     }
 
     getTitle() {
-        
+        return this.title;
+    }
+
+    getDescription() {
+        return this.description;
     }
     
+    getDueDate() {
+        return this.dueDate;
+    }
+
+    getPriority() {
+        return this.priority;
+    }
+
+    getCompleted() {
+        return this.completed;
+    }
 
 }
