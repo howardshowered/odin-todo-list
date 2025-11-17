@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "description": "odin webpack template for basics",
   "main": "index.js",
- "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --open --config webpack.dev.js",
     "deploy": "git subtree push --prefix origin gh-pages",
-    "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
-
+    "start": "webpack serve --open --config webpack.dev.js"
   },
   "repository": {
     "type": "git",

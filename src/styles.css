@@ -46,3 +46,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+body {
+	display:flex;
+
+}
+
+aside {
+	width: 25%;
+	 border: red solid 5px;
+	 padding: 25px;
+	 background-color: rgb(238, 238, 238);
+	
+}
+
+main {
+	 width: 75%;
+	 border: black solid 5px;
+	 padding: 25px;
+}
