@@ -12,6 +12,7 @@ export default class Task {
         this.completed = !this.completed;
     }
 
+    //Getters
     getTitle() {
         return this.title;
     }
@@ -31,5 +32,24 @@ export default class Task {
     getCompleted() {
         return this.completed;
     }
+
+    //Setters
+    setTitle(title) {
+        this.title = title; 
+    }
+
+    setDescription(description) {
+        this.description = description;
+    }
+
+    setDueDate( dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    setPriority(priority) {
+        this.priority = priority;
+    }
+
+
 
 }
