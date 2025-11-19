@@ -10,7 +10,11 @@ const StorageController =  ( () => {
     const restoreProjects = () => {
         const localProjects = JSON.parse(localStorage.getItem("projects"));
         if(!localProjects) return;
-        
+        localProjects.forEach( (project, index) => {
+            const name = project.name;
+            const tasks = project.getTaskList(); 
+        })
+
     }
 
 })
