@@ -9,18 +9,6 @@ const ProjectController = ( () => {
         projectList.push(project);
     };
 
-    //traditional function definition could cause some internal details to leak into global scope
-    /* 
-    function deleteProject(id) {
-
-        const projectIndex = projectList.findIndex((project) => project.id === id);
-        projectList.splice(projectIndex, 1);
-
-    }
-    */
-
-    //function closures enables creation of private variables
-
     const deleteProject = (id) => {
 
         const projectIndex = projectList.findIndex((project) => project.id === id);
