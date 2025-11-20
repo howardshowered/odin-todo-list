@@ -1,4 +1,5 @@
-import ProjectController from "./projectController"
+import ProjectController from "./projectController.js"
+import Project from "./project.js"
 
 const StorageController =  ( () => {
 
@@ -13,8 +14,28 @@ const StorageController =  ( () => {
         localProjects.forEach( (project, index) => {
             const name = project.name;
             const tasks = project.getTaskList(); 
+            if(index != 0) ProjectController.addProject(name);
+            const currentProject = ProjectController.getProjects()[index];
+
+            tasks.forEach((task, index2) => {
+                currentProject.addTask(
+                    task.name, 
+                    task.description,
+                    task.duDate,
+                    task.priority 
+                );
+             if(task.completed) currentProject.getTaskList()[index2].toggle();
+            });
+
         })
 
-    }
+    };
 
-})
+    return {
+        storeProjects,
+        restoreProjects
+    };
+
+})();
+
+export default StorageController;
