@@ -1,12 +1,17 @@
-import { createTask } from "./modules/todo-maker";
-import { projectCreator} from "./modules/project";
+import ProjectController from "./modules/projectController.js";
+import SidebarController from "./modules/sidebarController.js"
 import "./styles.css";
-let projects = [];
+import StorageController from "./modules/storageController.js";
 
-//initialize Project 1 with some tasks
-let firstProject = projectCreator()
 
 document.addEventListener( 'DOMContentLoaded', function() {
+    window.ProjectController = ProjectController;
+    // window.SidebarController = SidebarController;
+    StorageController.restoreProjects();
+    console.log(ProjectController.getProjects());
+
+
+
 
 
 });
