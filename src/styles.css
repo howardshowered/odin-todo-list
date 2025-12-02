@@ -91,7 +91,7 @@ header {
 	gap: 10px;
 }
 
-img.add-icon {
+img.icon {
 	height: 49px;
 
 }
@@ -102,8 +102,21 @@ div.add-nav {
 
 }
 
+img#add-icon {
+	height:49px;
+}
+
 div.add-nav:hover {
 	background-color: rgba(240, 255, 240);
 	font-size: 3rem;
 	
+}
+
+.nav-header {
+	display: flex;
+}
+
+.nav-header:hover {
+	background-color: rgba(240, 255, 240);
+	font-size: 3rem;
 }
