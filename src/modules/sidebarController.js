@@ -35,8 +35,9 @@ const SidebarController = ( () => {
 
         const addTaskH1 = document.createElement("h1");
         addTaskH1.textContent = "Add Task";
-        addNav.appendChild(addIcon);
         addNav.appendChild(addTaskH1);
+        addNav.appendChild(addIcon);
+     
 
         nav.appendChild(addNav);
 
@@ -61,7 +62,6 @@ const SidebarController = ( () => {
         myProjectsHeader.addEventListener("click", () => {
             ModalController.handleNewProject();
         })
-
 
         myProjectsHeader.appendChild(projecth1);
         myProjectsHeader.appendChild(addIcon2);
