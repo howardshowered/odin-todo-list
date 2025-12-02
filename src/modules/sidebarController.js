@@ -73,7 +73,14 @@ const SidebarController = ( () => {
         //Create Project items 
         const projects = ProjectController.getProjects();
         for ( let project of projects) {
-            
+            const projectItem = document.createElement("div")
+            const projectTitle = document.createElement("h1");
+            projectTitle.textContent = project.name;
+            projectTitle.dataset.id = project.dataset.id;
+
+            projectItem.appendChild(projectTitle);
+            nav.appendChild(projectItem);
+   
         }
     }
 
