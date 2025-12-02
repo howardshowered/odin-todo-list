@@ -1,7 +1,8 @@
 import ProjectController from "./projectController";
 const SidebarController = ( () => {
 
-    const sidebar = document.querySelector('aside');
+    const sidebar = document.createElement('aside');
+    const body = document.querySelector('body');
     const addTask = document.querySelector('.add-nav');
 
 
@@ -25,7 +26,7 @@ const SidebarController = ( () => {
         addNav.className = "add-nav";
 
         const addIcon = document.createElement("img");
-        addIcon.src = "./res/todo-add-svgrepo-com.svg";
+        addIcon.src = "../res/todo-add-svgrepo-com.svg";
         addIcon.className = "add-icon";
         const addTaskH1 = document.createElement("h1");
         addTaskH1.textContent = "Add Task";
@@ -34,17 +35,24 @@ const SidebarController = ( () => {
 
         nav.appendChild(addNav);
 
+        sidebar.appendChild(header);
+        sidebar.appendChild(nav);
+
+        body.appendChild(sidebar);
+
 
         //Create Project items 
         const projects = ProjectController.getProjects();
-        for ( let project of projects) {
+        // for ( let project of projects) {
             
-        }
-
-
-
+        // }
     }
 
+
+    return { render,
+
+
+    };
 
 
 
@@ -55,3 +63,5 @@ const SidebarController = ( () => {
     
 
 })();
+
+export default SidebarController;
