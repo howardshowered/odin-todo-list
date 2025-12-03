@@ -89,6 +89,7 @@ img.honey-dew-icon {
 header {
 	display: flex;
 	gap: 10px;
+	background-color: beige;
 }
 
 img.icon {
@@ -115,6 +116,7 @@ div.add-nav:hover {
 
 .nav-header {
 	display: flex;
+
 }
 
 .nav-header:hover {

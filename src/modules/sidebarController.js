@@ -44,7 +44,7 @@ const SidebarController = ( () => {
         sidebar.appendChild(header);
         sidebar.appendChild(nav);
 
-        addTaskH1.addEventListener("click", () => {
+        addIcon.addEventListener("click", () => {
             ModalController.handleNewTask();
 
         })
@@ -59,12 +59,13 @@ const SidebarController = ( () => {
         addIcon2.src = addIconSvg;
         addIcon2.className ='icon';
 
-        myProjectsHeader.addEventListener("click", () => {
+        myProjectsHeader.appendChild(projecth1);
+        myProjectsHeader.appendChild(addIcon2);
+        addIcon2.addEventListener("click", () => {
             ModalController.handleNewProject();
         })
 
-        myProjectsHeader.appendChild(projecth1);
-        myProjectsHeader.appendChild(addIcon2);
+
         myProjectsHeader.id = "newProject";
 
 
