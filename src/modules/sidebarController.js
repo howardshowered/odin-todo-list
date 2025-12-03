@@ -4,6 +4,7 @@ import honeyDewIcon from "../res/honeydew.svg";
 import addIconSvg from "../res/todo-add-svgrepo-com.svg";
 import delIconSvg from "../res/delete-svgrepo-com.svg"
 import StorageController from "./storageController";
+import ContentController from "./contentController";
 const SidebarController = ( () => {
 
     const sidebar = document.querySelector('aside');
@@ -52,7 +53,7 @@ const SidebarController = ( () => {
         })
 
         const myProjectsHeader = document.createElement("div");
-        myProjectsHeader.className = "nav-header"
+        myProjectsHeader.className = "nav-header";
 
         const projecth1 = document.createElement("h1");
         projecth1.textContent = "My Projects";
@@ -77,6 +78,7 @@ const SidebarController = ( () => {
         const projects = ProjectController.getProjects();
         for ( let project of projects) {
             const projectItem = document.createElement("div");
+            projectItem.className = "nav-header";
             const projectTitle = document.createElement("h1");
             const deleteButton = document.createElement("img");
             deleteButton.src = delIconSvg;
@@ -86,8 +88,6 @@ const SidebarController = ( () => {
                 ProjectController.deleteProject(project.getId());
                 render();
                 StorageController.storeProjects();
-
-
             });
 
 
@@ -95,11 +95,14 @@ const SidebarController = ( () => {
             projectTitle.dataset.id = project.getId();
 
             projectItem.appendChild(projectTitle);
+            projectItem.appendChild(deleteButton);
             nav.appendChild(projectItem);
-            nav.appendChild(deleteButton);
-
-   
+            projectTitle.addEventListener( "click", () => {
+                ContentController.render(project);
+            }
+            );
         }
+
     }
 
 

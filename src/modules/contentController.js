@@ -1,5 +1,10 @@
+import Project from "./project";
+
 const ContentController = (() => {
     const main = document.querySelector("main");
+    const projectTitle = document.createElement("h1");
+    main.appendChild(projectTitle);
+
     let activeProject = null;
 
 
@@ -7,7 +12,7 @@ const ContentController = (() => {
 
         activeProject = project;
         main.innerHtml = "";
-        
+        projectTitle.textContent = activeProject.getName();
 
     }
 
@@ -15,3 +20,5 @@ const ContentController = (() => {
         render,
     }
 })();
+
+export default ContentController;
