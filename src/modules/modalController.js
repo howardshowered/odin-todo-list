@@ -86,8 +86,6 @@ const ModalController = ( () => {
             optionElement.value = project.getId();
             optionElement.textContent = project.getName();
             projectSelector.appendChild(optionElement);
-            
-
         });
 
 
