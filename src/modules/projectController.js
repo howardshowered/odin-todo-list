@@ -25,8 +25,6 @@ const ProjectController = ( () => {
 
     };
 
-    addProject("Project 1");
-
     return {
         addProject,
         deleteProject,

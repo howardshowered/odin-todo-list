@@ -2,6 +2,8 @@ import ProjectController from "./projectController";
 import ModalController from "./modalController";
 import honeyDewIcon from "../res/honeydew.svg";
 import addIconSvg from "../res/todo-add-svgrepo-com.svg";
+import delIconSvg from "../res/delete-svgrepo-com.svg"
+import StorageController from "./storageController";
 const SidebarController = ( () => {
 
     const sidebar = document.querySelector('aside');
@@ -74,13 +76,28 @@ const SidebarController = ( () => {
         //Create Project items 
         const projects = ProjectController.getProjects();
         for ( let project of projects) {
-            const projectItem = document.createElement("div")
+            const projectItem = document.createElement("div");
             const projectTitle = document.createElement("h1");
+            const deleteButton = document.createElement("img");
+            deleteButton.src = delIconSvg;
+            deleteButton.className = "icon";
+
+            deleteButton.addEventListener( "click" , () => {
+                ProjectController.deleteProject(project.getId());
+                render();
+                StorageController.storeProjects();
+
+
+            });
+
+
             projectTitle.textContent = project.name;
-            projectTitle.dataset.id = project.dataset.id;
+            projectTitle.dataset.id = project.getId();
 
             projectItem.appendChild(projectTitle);
             nav.appendChild(projectItem);
+            nav.appendChild(deleteButton);
+
    
         }
     }
