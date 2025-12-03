@@ -75,6 +75,22 @@ const ModalController = ( () => {
         console.log(today);
         dueDateInput.min = today;
 
+        const projects = ProjectController.getProjects();
+
+        const projectSelector = document.createElement("select");
+        projectSelector.id = "project-selector";
+        projectSelector.name = "project-selector";
+
+        projects.forEach( (project) => {
+            const optionElement = document.createElement("option");
+            optionElement.value = project.getId();
+            optionElement.textContent = project.getName();
+            projectSelector.appendChild(optionElement);
+            
+
+        });
+
+
         const saveBtn = document.createElement("button");
         saveBtn.textContent = "Save";
 
@@ -93,6 +109,7 @@ const ModalController = ( () => {
         dialogDiv.appendChild(titleInput);
         dialogDiv.appendChild(descInput);
         dialogDiv.appendChild(dueDateInput);
+        dialogDiv.appendChild(projectSelector);
         dialogDiv.appendChild(actionDiv);
 
         dialog.appendChild(dialogDiv);
