@@ -38,6 +38,8 @@ const ContentController = (() => {
         if( tasks.length > 0 )
             tasksContent.textContent = "";
 
+        //@TODO create a card for each task with all the info provided and add 
+        //a delete button.
         for( let task of tasks){
             const newTask = document.createElement('h2');
             newTask.textContent = task.getTitle();
