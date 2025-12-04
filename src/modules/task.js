@@ -1,7 +1,7 @@
 export default class Task {
     constructor(title, description, dueDate, priority) {
         this.id = crypto.randomUUID();
-        this.title = title;
+        this.title = title; //should change this to name instead of title for continuity
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;

@@ -17,13 +17,15 @@ const StorageController =  ( () => {
             ProjectController.addProject(name);
             const currentProject = ProjectController.getProjects()[index];
 
+           
             tasks.forEach((task, index2) => {
                 currentProject.addTask(
-                    task.name, 
+                    task.title, 
                     task.description,
                     task.duDate,
                     task.priority 
                 );
+                console.log("task name: " + task.name);
              if(task.completed) currentProject.getTaskList()[index2].toggle();
             });
 

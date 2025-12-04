@@ -1,4 +1,5 @@
 import Project from "./project";
+import Task from "./task";
 import ModalController from "./modalController";
 const ContentController = (() => {
     const main = document.querySelector("main");
@@ -8,9 +9,9 @@ const ContentController = (() => {
     addTaskBtn.className = "add-task-btn";
     addTaskBtn.textContent = "Add Task";
 
-    const tasksContent = document.createElement("h2");
+    const tasksContent = document.createElement("div");
     main.appendChild(tasksContent);
-        main.appendChild(addTaskBtn);
+    main.appendChild(addTaskBtn);
     addTaskBtn.hidden = true;
 
 
@@ -21,6 +22,7 @@ const ContentController = (() => {
 
         activeProject = project;
         main.innerHtml = "";
+        tasksContent.innerHtml = "";
         projectTitle.textContent = activeProject.getName();
         addTaskBtn.hidden = false;
         addTaskBtn.addEventListener("click", () => {
@@ -30,10 +32,17 @@ const ContentController = (() => {
 
         //need to add business logic when modalController save button is clicked for Task adding.
         const tasks = project.getTaskList();
-        if( tasks.length === 0)
-            tasksContent.textContent = "No tasks associated with this Project";
+      
+        tasksContent.textContent = "No tasks associated with this Project";            
 
+        if( tasks.length > 0 )
+            tasksContent.textContent = "";
 
+        for( let task of tasks){
+            const newTask = document.createElement('h2');
+            newTask.textContent = task.getTitle();
+            tasksContent.appendChild(newTask);            
+        }
 
     }
 

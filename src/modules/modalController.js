@@ -1,6 +1,8 @@
 
 import ProjectController from "./projectController";
 import StorageController from "./storageController";
+import Project from "./project";
+import ContentController from "./contentController";
 const ModalController = ( () => {
 
     const dialog = document.createElement("dialog");
@@ -58,8 +60,10 @@ const ModalController = ( () => {
         const dialogDiv = document.createElement("div");
         dialogDiv.className = "new-task";
 
-        const title = document.createElement("div");
+        const title = document.createElement("h1");
+        title.className = "new-task-title";
         title.textContent = "New Task";
+
         const titleInput = document.createElement("input");
         titleInput.setAttribute("required", "");
         titleInput.setAttribute("placeholder", "Title" );
@@ -93,7 +97,31 @@ const ModalController = ( () => {
         saveBtn.textContent = "Save";
 
         saveBtn.addEventListener( "click", () => {
+            //get project object first
+            const projectSelectedId = projectSelector.value;
+            console.log("projectSelectedId : " + projectSelectedId);
+            const projects = ProjectController.getProjects();
+            
+            // couldn't figure out how to use find method
+            let selectedProject = projects.find( 
+                (project) => project.getId() === projectSelectedId);
+            
+            // let selectedProject;
+            // for( let project of projects) {
+            //     if(project.getId() === projectSelectedId)
+            //         selectedProject = project;
+                    
+            // }
+            const titleName = titleInput.value;
+            const desc = descInput.value;
+            const dueDate = dueDateInput.value;
+            selectedProject.addTask( titleName, desc, dueDate, 1);
+            // titleInput.value 
+            StorageController.storeProjects();
+            ContentController.render(selectedProject);
+            dialog.close();
 
+            //@TODO Storage controller not saving tasks, only projects
         });
         const cancelBtn = document.createElement("button");
         cancelBtn.textContent = "Cancel";

@@ -128,3 +128,7 @@ div.add-nav:hover {
 	background-color: red;
 	color: white;
 }
+h1.new-task-title {
+	text-align: center;
+	padding: 15px;
+}
