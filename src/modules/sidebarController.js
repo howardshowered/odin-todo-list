@@ -8,8 +8,6 @@ import ContentController from "./contentController";
 const SidebarController = ( () => {
 
     const sidebar = document.querySelector('aside');
-    const body = document.querySelector('body');
-    const addTask = document.querySelector('.add-nav');
 
 
     const render = () => {
