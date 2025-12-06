@@ -73,6 +73,9 @@ main {
 	background-color: rgba(240, 255, 240);
 	 padding: 25px;
 	height: 1000px;
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
 
 }
 
@@ -132,6 +135,7 @@ div.add-nav:hover {
 	border-radius: 8px;
 	background-color: red;
 	color: white;
+	width: 150px;
 }
 h1.new-task-title {
 	text-align: center;
