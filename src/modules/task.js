@@ -33,6 +33,10 @@ export default class Task {
         return this.completed;
     }
 
+    getId() {
+        return this.id;
+    }
+
     //Setters
     setTitle(title) {
         this.title = title; 

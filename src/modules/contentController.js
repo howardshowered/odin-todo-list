@@ -2,6 +2,8 @@ import Project from "./project";
 import Task from "./task";
 import ModalController from "./modalController";
 import DeleteBtn from "../res/delete-svgrepo-com.svg";
+import StorageController from "./storageController";
+// import ContentController from "./contentController";
 
 const ContentController = (() => {
     const main = document.querySelector("main");
@@ -58,6 +60,18 @@ const ContentController = (() => {
             const deleteBtn = document.createElement('img');
             deleteBtn.src = DeleteBtn;
             deleteBtn.className = "icon";
+            deleteBtn.dataset.id = task.getId();
+
+            deleteBtn.addEventListener('click', (e) => {
+
+                //TODO figure out how to remove tasks
+                const taskId = e.target.closest("[data-id]").dataset.id;
+                project.removeTask(taskId);
+                StorageController.storeProjects();
+                render(project);
+            
+                
+            })
             
             taskBox.appendChild(newTaskTitle);
             taskBox.appendChild(newTaskDesc);

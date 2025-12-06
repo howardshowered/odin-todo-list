@@ -102,6 +102,11 @@ div.add-nav {
 	gap: 10px;
 
 }
+.title {
+	color: rgb(132, 241, 7);
+	font-size: 3rem;
+	font-weight: bold;
+}
 
 img#add-icon {
 	height:49px;
@@ -159,4 +164,10 @@ h1.new-task-title {
 	gap: 20px;
 	margin-bottom: 12px;
 
+}
+
+.delete-btn {
+	background-image: url('res/delete-svgrepo-com.svg');
+	height: 12px;
+	width: 10px;
 }

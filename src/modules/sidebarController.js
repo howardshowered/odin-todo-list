@@ -21,6 +21,7 @@ const SidebarController = ( () => {
 
         const title = document.createElement("h1");
         title.textContent = "2Dew";
+        title.className = "title";
 
         header.appendChild(icon);
         header.appendChild(title);
