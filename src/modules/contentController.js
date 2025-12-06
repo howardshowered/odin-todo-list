@@ -1,5 +1,5 @@
-import Project from "./project";
-import Task from "./task";
+// import Project from "./project"; don't need to import not sure why
+// import Task from "./task";
 import ModalController from "./modalController";
 import DeleteBtn from "../res/delete-svgrepo-com.svg";
 import StorageController from "./storageController";
@@ -69,7 +69,6 @@ const ContentController = (() => {
                 project.removeTask(taskId);
                 StorageController.storeProjects();
                 render(project);
-            
                 
             })
             
