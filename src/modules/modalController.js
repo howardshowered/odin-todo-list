@@ -50,7 +50,6 @@ const ModalController = ( () => {
             SidebarController.render();
         });
         
-
     };
 
     const handleNewTask = () => {
@@ -145,7 +144,6 @@ const ModalController = ( () => {
         handleNewTask
 
     }
-
 
 })();
 
