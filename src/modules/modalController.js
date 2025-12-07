@@ -6,6 +6,7 @@ import ContentController from "./contentController";
 const ModalController = ( () => {
 
     const dialog = document.createElement("dialog");
+    dialog.id = "dialog";
 
     document.querySelector("body").appendChild(dialog);
 
@@ -15,10 +16,9 @@ const ModalController = ( () => {
         const dialogDiv = document.createElement("div");
         dialogDiv.className = "new-project";
 
-        const title = document.createElement("div");
-        title.textContent = "New Project";
         const input = document.createElement("input");
         input.setAttribute("required", "");
+        input.setAttribute("placeholder", "Project Name" );
         const saveBtn = document.createElement("button");
         saveBtn.textContent = "Save";
 
@@ -33,7 +33,6 @@ const ModalController = ( () => {
         actionDiv.appendChild(saveBtn);
         actionDiv.appendChild(cancelBtn);
 
-        dialogDiv.appendChild(title);
         dialogDiv.appendChild(input);
         dialogDiv.appendChild(actionDiv);
         dialog.appendChild(dialogDiv);
@@ -59,10 +58,6 @@ const ModalController = ( () => {
 
         const dialogDiv = document.createElement("div");
         dialogDiv.className = "new-task";
-
-        const title = document.createElement("h1");
-        title.className = "new-task-title";
-        title.textContent = "New Task";
 
         const titleInput = document.createElement("input");
         titleInput.setAttribute("required", "");
@@ -134,7 +129,6 @@ const ModalController = ( () => {
         actionDiv.appendChild(saveBtn);
         actionDiv.appendChild(cancelBtn);
 
-        dialogDiv.appendChild(title);
         dialogDiv.appendChild(titleInput);
         dialogDiv.appendChild(descInput);
         dialogDiv.appendChild(dueDateInput);

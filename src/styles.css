@@ -118,7 +118,6 @@ img#add-icon {
 div.add-nav:hover {
 	background-color: rgba(240, 255, 240);
 	font-size: 3rem;
-	
 }
 
 .nav-header {
@@ -136,10 +135,6 @@ div.add-nav:hover {
 	background-color: red;
 	color: white;
 	width: 150px;
-}
-h1.new-task-title {
-	text-align: center;
-	padding: 15px;
 }
 
 .task-box {
@@ -174,4 +169,27 @@ h1.new-task-title {
 	background-image: url('res/delete-svgrepo-com.svg');
 	height: 12px;
 	width: 10px;
+}
+
+.new-task {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.new-project {
+	
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+}
+
+dialog {
+	position: fixed;
+	top: -60%;
+	left: -25%;
+	border-radius: 12px;
+	width: 350px;
+
 }
