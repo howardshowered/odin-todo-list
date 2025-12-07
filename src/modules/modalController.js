@@ -3,6 +3,7 @@ import ProjectController from "./projectController";
 import StorageController from "./storageController";
 import Project from "./project";
 import ContentController from "./contentController";
+import SidebarController from "./sidebarController";
 const ModalController = ( () => {
 
     const dialog = document.createElement("dialog");
@@ -52,7 +53,7 @@ const ModalController = ( () => {
         
     };
 
-    const handleNewTask = () => {
+    const handleNewTask = (project = null) => {
         dialog.innerHTML = ``;
 
         const dialogDiv = document.createElement("div");
@@ -75,17 +76,22 @@ const ModalController = ( () => {
 
         const projects = ProjectController.getProjects();
 
+        let selectedindex = 0;
         const projectSelector = document.createElement("select");
         projectSelector.id = "project-selector";
         projectSelector.name = "project-selector";
 
-        projects.forEach( (project) => {
+        projects.forEach( (project, index) => {
             const optionElement = document.createElement("option");
             optionElement.value = project.getId();
             optionElement.textContent = project.getName();
             projectSelector.appendChild(optionElement);
+            if(project && project === SidebarController.getSelectedProject()) {
+                selectedindex = index;
+            }
         });
 
+        projectSelector.selectedIndex = selectedindex;
 
         const saveBtn = document.createElement("button");
         saveBtn.textContent = "Save";

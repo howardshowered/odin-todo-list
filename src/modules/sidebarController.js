@@ -6,10 +6,12 @@ import delIconSvg from "../res/delete-svgrepo-com.svg"
 import StorageController from "./storageController";
 import ContentController from "./contentController";
 const SidebarController = ( () => {
+    let selectedProject = null;
 
     const sidebar = document.querySelector('aside');
 
 
+    const getSelectedProject = () => selectedProject;
     const render = () => {
         sidebar.textContent = "";
         
@@ -98,6 +100,7 @@ const SidebarController = ( () => {
             nav.appendChild(projectItem);
             projectTitle.addEventListener( "click", () => {
                 ContentController.render(project);
+                selectedProject = project;
             }
             );
         }
@@ -107,6 +110,7 @@ const SidebarController = ( () => {
 
     return { 
         render,
+        getSelectedProject
     };
     
 
