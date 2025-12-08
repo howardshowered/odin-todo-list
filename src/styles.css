@@ -55,9 +55,9 @@ body {
 aside {
 	width: 18%;
 	 /* border: rgb(38, 0, 255) solid 5px; */
-	 padding: 25px;
-	 background-color: white;
-	 /* background-color: rgba(94.1,100, 94.1); */
+	padding: 5px;
+	background-color: white;
+	/* background-color: rgba(94.1,100, 94.1); */
 	height: 1000px;
 	display: flex;
 	flex-direction: column;
@@ -92,6 +92,12 @@ img.honey-dew-icon {
 header {
 	display: flex;
 	gap: 10px;
+	align-self: center;
+	width: 100%;
+	padding: 10px;
+	border: black solid 12px;
+	border-radius: 10px;
+	background-color: rgba(240, 255, 240);
 	
 }
 
@@ -106,7 +112,7 @@ div.add-nav {
 
 }
 .title {
-	color: rgb(132, 241, 7);
+	color: Black;
 	font-size: 3rem;
 	font-weight: bold;
 }
@@ -178,7 +184,7 @@ div.add-nav:hover {
 }
 
 .new-project {
-	
+
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
